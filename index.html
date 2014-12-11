@@ -15,9 +15,20 @@
 		<!-- Latest compiled and minified JavaScript -->
 		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
-    <script>
+		<!-- cycle js -->
+   		<script src="http://malsup.github.com/jquery.cycle2.js"></script>
+   		<!--
+   		<script src="http://malsup.github.io/min/jquery.cycle2.video.min.js"></script>
+   		-->
+	    </script>
 
+	    <script type="text/javascript">
+	    jQuery( '.cycle-slideshow' ).on( 'click', function() {
+	        // your event handler code here
+	        // argument opts is the slideshow's option hash
+	        $('.cycle-slideshow').cycle('next');
 
+	    });
 	
 	</script>
 
@@ -113,7 +124,7 @@
 		}
 
 		.caption-box {
-			margin: 15px 0 120px 0;
+			margin: 40px 0 120px 0;
 		}
 
 		p{
@@ -129,6 +140,26 @@
 			margin-top:5px;
 		}
 
+		.cycle-slideshow { max-width: 1600px; margin: auto }
+		.cycle-slideshow > div { width: 100%; height: 100% }
+		.cycle-slideshow > img { width: 100%; height: 100% }
+		iframe,object,embed { width: 100%; height: 100% }
+
+		.pager-dots {
+			font-size: 50px;
+			width: 100%;
+			height: 16px;
+			color: #ddd;
+			text-align: center;
+		}
+		.pager-dots span { 
+		    font-family: arial; font-size: 50px; width: 16px; height: 16px; 
+		    display: inline-block; color: #ddd; cursor: pointer; 
+		}
+		.pager-dots span.cycle-pager-active { color: red;}
+		.pager-dots > * { cursor: pointer;}
+
+		}
 	</style>
 
 </head>
@@ -148,32 +179,73 @@
 				</h2>
 
 			</div>
+</div>
 
+<div class="row">
 
-	<div id="video-gallery" class="col-sm-8 col-sm-offset-2">
+<div id="video-gallery" class="col-sm-8 col-sm-offset-2">
 
-		<div class="embed-responsive embed-responsive-16by9">
+	<div class="cycle-slideshow"
+	    data-cycle-fx="scrollHorz"
+	    data-cycle-timeout="0"
+	    data-cycle-slides="> div"
+	    data-cycle-prev=#prev
+	    data-cycle-next=#next
+	    data-cycle-pager=".pager-dots"
+	    >
 
-			<iframe class="embed-responsive-item" src="http://www.youtube.com/embed/m6dyjOVbyu4"s allowfullscreen></iframe>
-
-		</div>
-
-		<div class="caption-box">
-
-			<div class="col-sm-6">
-			<p class="from-to">From:</p>
-			<p class="from-whom">
-				Class of 2014
-			</p>
-			</div>
-			<div class="col-sm-6">
-			<p class="from-to">To:</p>
-			<p class="to-whom">
-				Grabs
-			</p>
+	    <div>
+			<div class="embed-responsive embed-responsive-16by9"data-cycle-pager-template="">
+				<img src="grabs.gif" class="embed-responsive-item"/>
 			</div>
 		</div>
+
+	    <div>
+			<div class="embed-responsive embed-responsive-16by9" data-cycle-pager-template="">
+				<iframe class="embed-responsive-item" src="http://www.youtube.com/embed/m6dyjOVbyu4"s allowfullscreen></iframe>
+			</div>
+		</div>
+
+		<div>
+			<div class="embed-responsive embed-responsive-16by9" data-cycle-pager-template="">
+				<iframe class="embed-responsive-item" src="http://www.youtube.com/embed/7SzwwXAPLAM" allowfullscreen></iframe>
+			</div>
+		</div>
+
+	    <div>
+			<div class="embed-responsive embed-responsive-16by9" data-cycle-pager-template="">
+				<iframe class="embed-responsive-item" src="http://www.youtube.com/embed/t4gjl-uwUHc" allowfullscreen></iframe>
+
+			</div>
+		</div>
+
 	</div>
+	
+	<div class="col-sm-6 col-sm-offset-3">
+
+		<div class="pager-dots"></div>
+
+	</div>
+
+	<div class="caption-box">
+
+		<div class="col-sm-6">
+		<p class="from-to">From:</p>
+		<p class="from-whom">
+			Class of 2014
+		</p>
+		</div>
+		<div class="col-sm-6">
+		<p class="from-to">To:</p>
+		<p class="to-whom">
+			Grabs
+		</p>
+		</div>
+
+	</div>
+</div>
+
+
 
 </div>
 
