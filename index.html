@@ -1,182 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="utf-8">
+
     <title>Get the fuck better, Grabs</title>
 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <!-- CSS Reset goes first -->
+    <link rel="stylesheet" href="css/reset.css" type="text/css">
 
-		<!-- Latest compiled and minified CSS -->
-		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
 
-		<!-- Optional theme -->
-		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css" type="text/css">
 
-		<!-- Latest compiled and minified JavaScript -->
-		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <!-- Load Grabs -->
+    <link rel="stylesheet" href="css/grabs.css" type="text/css">
 
-    <script>
+    <!-- jQuery cause duh -->
+    <script src="js/jquery.min.js" type="text/javascript"></script>
 
+    <!-- responsive youtubes -->
+    <script src="js/jquery.fitvids.js" type="text/javascript"></script>
 
-	
-	</script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/bootstrap.min.js" type="text/javascript"></script>
 
-	<style type="text/css">
-
-		/* http://meyerweb.com/eric/tools/css/reset/ 
-	   v2.0 | 20110126
-	   License: none (public domain)
-		*/
-
-		html, body, div, span, applet, object, iframe,
-		h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-		a, abbr, acronym, address, big, cite, code,
-		del, dfn, em, img, ins, kbd, q, s, samp,
-		small, strike, strong, sub, sup, tt, var,
-		b, u, i, center,
-		dl, dt, dd, ol, ul, li,
-		fieldset, form, label, legend,
-		table, caption, tbody, tfoot, thead, tr, th, td,
-		article, aside, canvas, details, embed, 
-		figure, figcaption, footer, header, hgroup, 
-		menu, nav, output, ruby, section, summary,
-		time, mark, audio, video {
-			margin: 0;
-			padding: 0;
-			border: 0;
-			font-size: 100%;
-			font: inherit;
-			vertical-align: baseline;
-		}
-		/* HTML5 display-role reset for older browsers */
-		article, aside, details, figcaption, figure, 
-		footer, header, hgroup, menu, nav, section {
-			display: block;
-		}
-		body {
-			line-height: 1;
-		}
-		ol, ul {
-			list-style: none;
-		}
-		blockquote, q {
-			quotes: none;
-		}
-		blockquote:before, blockquote:after,
-		q:before, q:after {
-			content: '';
-			content: none;
-		}
-		table {
-			border-collapse: collapse;
-			border-spacing: 0;
-		}
-
-
-		/*
-		my css
-		*/
-
-		h1 {
-			margin-top:30px;
-			font-family: "Montserrat", 'Arial Black', sans-serif;
-			font-style: normal;
-			font-weight: 700;
-			font-size:6em;
-			line-height:85px;
-			color: black;
-			z-index:100;
-		}
-		span#fuck {
-			font-family: "Montserrat Black", 'Arial Black', sans-serif;
-			font-weight: 700;
-			color: red;
-		}
-
-		span#dotcom {
-			font-size:.25em;
-		}
-		h2{
-			margin-top:10px;
-			font-family: "Montserrat", 'Arial Black', sans-serif;
-			font-style: normal;
-			font-weight: 400;
-			font-size:1.5em;
-			line-height:30px;
-			color: black;
-			z-index:100;
-			text-align: right;
-		}
-
-		#video-gallery {
-			margin-top: 40px;
-		}
-
-		.caption-box {
-			margin: 15px 0 120px 0;
-		}
-
-		p{
-			font-family: "Open Sans", 'Helvetica' sans-serif;
-		}
-		.from-to{
-			font-weight: bold;
-			font-size: 1em;
-			color:red;
-			margin-top:5px;
-		}
-		.from-whom .to-whome {
-			margin-top:5px;
-		}
-
-	</style>
+    <!-- roll it -->
+    <script src="js/main.js" type="text/javascript"></script>
 
 </head>
 
 <body>
-
-<div class="row">
-
-			<div class="col-sm-6 col-sm-offset-3">
-
-				<h1>
-					GET THE <span id="fuck">FUCK</span> BETTER, GRABS<span id="dotcom">.com</span>
-				</h1>
-
-				<h2>
-					an interactive get well soon card
-				</h2>
-
-			</div>
-
-
-	<div id="video-gallery" class="col-sm-8 col-sm-offset-2">
-
-		<div class="embed-responsive embed-responsive-16by9">
-
-			<iframe class="embed-responsive-item" src="http://www.youtube.com/embed/m6dyjOVbyu4"s allowfullscreen></iframe>
-
-		</div>
-
-		<div class="caption-box">
-
-			<div class="col-sm-6">
-			<p class="from-to">From:</p>
-			<p class="from-whom">
-				Class of 2014
-			</p>
-			</div>
-			<div class="col-sm-6">
-			<p class="from-to">To:</p>
-			<p class="to-whom">
-				Grabs
-			</p>
-			</div>
-		</div>
-	</div>
-
-</div>
-
-
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12">
+                <h1>GET THE <span class="fuck">FUCK</span> BETTER, GRABS<span class="dotcom">.com</span></h1>
+                <h2>an interactive get well soon card</h2>
+            </div>
+            <div class="video-gallery col-xs-12">
+                <iframe width="1280" height="720" src="//www.youtube-nocookie.com/embed/videoseries?list=PLsGpvENngBCUggBCqeuguCU9XtIPRMyd-" frameborder="0" allowfullscreen></iframe>
+                <div class="caption-box">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <p class="from-to">From:</p>
+                            <p class="from-whom">Class of 2014</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="from-to">To:</p>
+                            <p class="to-whom">Grabs</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
