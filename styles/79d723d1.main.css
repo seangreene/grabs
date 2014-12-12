@@ -6277,6 +6277,9 @@ h3 {
 p {
     font-family: "Open Sans", Helvetica sans-serif
 }
+a {
+	color:red;
+}
 .glyphicon-heart {
     color: red
 }
