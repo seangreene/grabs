@@ -6258,8 +6258,18 @@ h2 {
     margin-top: 10px;
     z-index: 100
 }
-.video-gallery {
-    margin-top: 40px
+h3 {
+    color: red;
+    font-family: Montserrat, 'Arial Black', sans-serif;
+    font-size: 1.5em;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+    margin-top: 10px;
+    z-index: 100
+}
+.grabs-section-container {
+	margin-top:30px;
 }
 .caption-box {
     margin: 15px 0 120px
