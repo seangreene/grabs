@@ -1,1 +1,0 @@
-setTimeout(function(){console.log("bananas"),$(window).trigger("resize")},1e3);var kitten=$("#imgz").masonry();kitten.imagesLoaded(function(){"use strict";kitten.masonry()});
