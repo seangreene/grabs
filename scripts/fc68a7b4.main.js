@@ -1,1 +1,0 @@
-docReady(function(){var a=jQuery("#imgz").masonry();a.imagesLoaded(function(){a.masonry()}),$(window).trigger("resize")});
