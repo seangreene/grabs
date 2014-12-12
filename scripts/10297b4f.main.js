@@ -1,1 +1,0 @@
-!function(){$(document).ready(function(){var a=$("#imgz");a.imagesLoaded(function(){a.masonry()})})}();
