@@ -6230,6 +6230,22 @@ body {
 .container-narrow>hr {
     margin: 30px 0
 }
+#hed {
+    width: 60%;
+    float: left;
+}
+#chowchow {
+    width: 40%;
+    float: left;
+    cursor: pointer;
+}
+#chowchow img:hover {
+    opacity: 0.6;
+}
+#chowchow p:hover{
+    opacity: 0.6;
+}
+
 h1 {
     color: #000;
     font-family: Montserrat, 'Arial Black', sans-serif;
@@ -6248,6 +6264,7 @@ h1 {
 .dotcom {
     font-size: .25em
 }
+
 h2 {
     color: #000;
     font-family: Montserrat, 'Arial Black', sans-serif;
@@ -6272,13 +6289,67 @@ h3 {
 	margin-top:30px;
 }
 .caption-box {
-    margin: 15px 0 120px
+    margin-top: 15px auto 0;
+    padding: 10px;
 }
 p {
     font-family: "Open Sans", Helvetica sans-serif
 }
 a {
 	color:red;
+}
+
+.nav {
+    position:fixed;
+}
+.nav p {
+    cursor: pointer;
+}
+.nav p:hover {
+    opacity: 0.6;
+}
+.nav p.active {
+    color: #000;
+}
+#chowchow-small:hover{
+    opacity: 0.6;
+}
+.comment-box div {
+    width: 75%;
+    border: 1px solid #e3e3e3;
+    margin: 15px auto;
+    padding: 10px;
+}
+.comment-box div time {
+    font-size: 13px;
+    color: gray;
+}
+.comment-box div h4 {
+    font-size: 16px;
+}
+.clear {
+    clear: both;
+}
+@media (max-width: 767px){
+    .nav {
+        position: relative;
+    }
+    .nav p {
+        float: left;
+        margin-right: 10px;       
+    }
+    .comment-box div {
+        width: 100%;
+    }
+}
+@media (max-width: 631px){
+    #hed {
+        width: 100%;
+    }
+    #chowchow {
+        width: 100%;
+        display:none;
+    }
 }
 .glyphicon-heart {
     color: red

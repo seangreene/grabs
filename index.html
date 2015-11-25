@@ -11,37 +11,95 @@
     <link rel=stylesheet href=styles/79d723d1.main.css>
     <script src=scripts/vendor/fbe20327.modernizr.js></script>
 
+
+    <script src=scripts/724fa566.vendor.js></script>
+    <script src="scripts/tabletop.js"></script>
+    <script src="scripts/handlebars-v4.0.5.js"></script>
+
     <body>
         <!--[if lt IE 10]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
         <div class=container-fluid>
 
+            <div id="nav" class="nav">
+                <p id="top"><strong>GT<span class=fuck>F</span>B.com</strong> <img src="http://getthefuckbetter.com/images/53e21047.003.jpg" width="20px" height="auto"></p>
+                <p id="s1" class=fuck>GIFs</p>
+                <p id="s2" class=fuck>Videos</p>
+                <p id="s3" class=fuck>Photos</p>
+                <p id="s4" class=fuck>Comments</p>
+
+                <p id="chowchow-small" data-toggle="modal" data-target="#messages" class=fuck>Leave a message</p>
+            </div>
+<script>
+    $("#top").click(function(){
+        $('html, body').animate({
+            scrollTop: $("body").offset().top
+        }, 1000);
+    });
+    $("#s1").click(function(){
+        $('html, body').animate({
+            scrollTop: $("#gif").offset().top
+        }, 1000);
+    });
+    $("#s2").click(function(){
+        $('html, body').animate({
+            scrollTop: $("#videos").offset().top
+        }, 1000);
+    });
+    $("#s3").click(function(){
+        $('html, body').animate({
+            scrollTop: $("#photos").offset().top
+        }, 1000);
+    });
+    $("#s4").click(function(){
+        $('html, body').animate({
+            scrollTop: $("#comments").offset().top
+        }, 1000);
+    });
+    $('.nav p').click(function(){
+        $('.nav p').children("img").remove();
+        $('.nav p').removeClass('active');
+
+        $(this).append(' <img src="http://getthefuckbetter.com/images/53e21047.003.jpg" width="20px" height="auto">');
+        
+        $(this).addClass('active');
+    })
+
+</script>
             <div class=row>
                 <div class="col-xs-12 col-sm-8 col-sm-offset-2">
-                    <div style="width:60%">
+                    <div id="hed">
                     <h1>GET THE <span class=fuck>FUCK</span> BETTER, GRABS<span class=dotcom>.com</span></h1>
                     </div>
+                    <div id="chowchow" class="col-sm-4" data-toggle="modal" data-target="#messages">
+                        <img src="http://getthefuckbetter.com/images/53e21047.003.jpg" width="100%" />
+                        <p><span class=fuck>Click the chow chow to leave a message for Grabs.</span></p>
+                        <p>Note: Your message will be published automatically, so don't fuck it up.</p>
+                    </div>
+                  </div>
+                 <div class="col-xs-12 col-sm-8 col-sm-offset-2">
                     <h2>an interactive get well soon card</h2> 
-
 
                     <h2>featuring...</h2>
 
-                <div class="grabs-section-container">
+                <div class="grabs-section-container" id="gif">
                     <h3>GIFs!</h3>
                     <p>Grabs loves GIFs. <img src="http://i.imgur.com/bMJ1Rf2.jpg" width="20px" height=auto /></p>
                     <img src=images/dcb7b2a9.grabs.gif width=100% alt=Grabs class=img-responsive>
                 </div><!-- gif -->
-                
-                <div class="grabs-section-container">
+
+                <div class="grabs-section-container" id="videos">
                     <h3>VIDEOS!</h3>
 
                     <div id=vidz class="embed-responsive embed-responsive-16by9">
                         <iframe class=embed-responsive-item  src="http://www.youtube.com/embed/videoseries?list=PL8gM2XRxa8a98EZNuwh9PWWwjEb_lG6ZF" allowfullscreen></iframe>
                     </div>
+
                 </div><!--video container -->
 
-                <div class="grabs-section-container">
+
+                <div class="grabs-section-container" id="photos">
                     <h3>AND PHOTOS!</h3>
 
                     <div id=imgz class=js-masonry data-masonry-options="{ &quot;itemSelector&quot;: &quot;.item&quot;, &quot;gutter&quot;: 10, &quot;isFitWidth&quot;: true }">
@@ -102,6 +160,7 @@
                         </div>  
                         <div class=item>
                           <a href=images/grabs-stunna.jpg data-lightbox=grabs data-title=""> <img class=img-responsive src=images/grabs-stunna.jpg alt=""> </a>
+
                         </div>
                         <div class=item>
                           <a href=images/017.jpg data-lightbox=grabs data-title=""> <img class=img-responsive src=images/017.jpg alt=""> </a>
@@ -138,9 +197,31 @@
                         </div>
                         <div class=item>
                           <a href=images/028.jpg data-lightbox=grabs data-title=""> <img class=img-responsive src=images/028.jpg alt=""> </a>
-                        </div>                                                                                      
+                        </div>                                                                              
                     </div><!-- imgz lightbox-->
                 </div><!--image container-->
+
+                <div style="height:50px"></div>
+
+                <div class="grabs-section-container" id="comments">
+                    <h3>COMMENTS!</h3>
+
+                    <div class="comment-box" id="basic-handlebars-content">
+
+
+                    </div>
+
+
+                </div><!--comments-->
+
+                <div class="clear"></div>
+                <div style="height:50px"></div>
+
+                </div><!-- col-xs-12-->
+            </div><!--row-->
+
+            <div id="footer" class="row">
+                <div class="col-xs-12 col-sm-8 col-sm-offset-2">
 
                 <div class="grabs-section-container">
                     <div class=caption-box>
@@ -152,14 +233,67 @@
 
                         <div class=row>
                             <div class=col-sm-6>
+
                                 <p>Have something to add? <a href="mailto:gtfbettergrabs@gmail.com">Email us.</a>
+
                             </div>
                         </div>
                     </div>
+                </div><!--footer-->
                 </div>
-
-                </div><!-- col-xs-12-->
             </div><!--row-->
+
         </div><!--container-fluid-->
-        <script src=scripts/724fa566.vendor.js></script>
-        <script src=scripts/93b001ec.main.js></script>
+
+        <!-- Modal -->
+        <div class="modal fade" id="messages" tabindex="-1" role="dialog" aria-labelledby="introduction">
+          <div class="modal-dialog" role="document">
+             <div class="modal-content">
+              <div class="modal-header">
+                <button id="modalclose" type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title fuck">Leave a message</h4>
+                <p>Note: Your message will be published automatically, so don't fuck it up.</p>
+              </div>
+
+              <div class="modal-body row">
+
+
+                <style>.embed-container { position: relative; padding-bottom: 56.25%; min-height: 500px; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
+                <div class='embed-container'><iframe src="https://docs.google.com/forms/d/1O_aFY5maIOFGPMMq7BPWS5n7ZqA5nhcv3hRLMqt6bxk/viewform?embedded=true" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe></div>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+
+<script id="basic-handlebars-template" type="text/x-handlebars-template">
+    <div>
+        <time datetime='2014-06-19T21:30'>Posted on {{day}}</time>
+        <h4>{{name}}</h4>
+        <p>{{message}}</p>
+    </div>
+</script>
+<script type="text/javascript">
+
+var jqueryNoConflict = jQuery;
+jqueryNoConflict(document).ready(function() {
+    Tabletop.init({
+        key: '1GQQiBKmECGVNP2BQ8Isez2kxawYQd7OHkta3rvpzZhs',
+        callback: displayData
+    });
+});
+
+function displayData(data, tabletop) {
+    var source = $('#basic-handlebars-template').html();
+    var template = Handlebars.compile(source);
+    jqueryNoConflict.each(tabletop.sheets('Form Responses 1').all(), function (i, data) {
+        var html = template(data);
+        $("#basic-handlebars-content").append(html);
+    });
+};
+</script>
+
+<script src=scripts/93b001ec.main.js></script>  
+
