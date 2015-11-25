@@ -266,13 +266,18 @@
             </div>
           </div>
         </div>
-
+<style>
+.comment-box div img[src=""] {
+    display: none;
+}
+</style>
 
 <script id="basic-handlebars-template" type="text/x-handlebars-template">
     <div>
-        <time datetime='2014-06-19T21:30'>Posted on {{day}}</time>
+        <time datetime='2014-06-19T21:30'>Posted on {{time}}</time>
         <h4>{{name}}</h4>
         <p>{{message}}</p>
+        <img src='{{image}}' width='100%' />
     </div>
 </script>
 <script type="text/javascript">
@@ -290,7 +295,9 @@ function displayData(data, tabletop) {
     var template = Handlebars.compile(source);
     jqueryNoConflict.each(tabletop.sheets('Form Responses 1').all(), function (i, data) {
         var html = template(data);
+
         $("#basic-handlebars-content").append(html);
+
     });
 };
 </script>
