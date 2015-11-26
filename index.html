@@ -29,7 +29,7 @@
         <div class=container-fluid>
 
             <div id="nav" class="nav">
-                <p id="top"><strong>GT<span class=fuck>F</span>B.com</strong> <img src="http://getthefuckbetter.com/images/53e21047.003.jpg" width="20px" height="auto"></p>
+                <p id="top"><strong>GT<span class=fuck>F</span>B.com</strong> <img src="/images/53e21047.003.jpg" width="20px" height="auto"></p>
                 <p id="s1" class=fuck>GIFs</p>
                 <p id="s2" class=fuck>Videos</p>
                 <p id="s3" class=fuck>Photos</p>
@@ -67,10 +67,62 @@
         $('.nav p').children("img").remove();
         $('.nav p').removeClass('active');
 
-        $(this).append(' <img src="http://getthefuckbetter.com/images/53e21047.003.jpg" width="20px" height="auto">');
+        $(this).append(' <img src="/images/53e21047.003.jpg" width="20px" height="auto">');
         
         $(this).addClass('active');
-    })
+    });
+
+
+    
+    $(window).scroll(function(event){
+
+        var scroll = $(window).scrollTop();
+        var scroll_top = $('body').offset().top;
+        var gif_scroll = $('#gif').offset().top;
+        var vid_scroll = $('#videos').offset().top;
+        var pic_scroll = $('#photos').offset().top;
+        var comment_scroll = $('#comments').offset().top;
+
+        //console.log( scroll > gif_scroll);
+
+        if ( scroll >= scroll_top - 30 ) {
+
+            $('.nav p').children("img").remove();
+            $('.nav p').removeClass('active');
+            $('#top').append(' <img src="/images/53e21047.003.jpg" width="20px" height="auto">');
+            $('#top').addClass('active');           
+        };
+
+        if ( scroll >= gif_scroll - 30 ) {
+            $('.nav p').children("img").remove();
+            $('.nav p').removeClass('active');
+            $('#s1').append(' <img src="/images/53e21047.003.jpg" width="20px" height="auto">');
+            $('#s1').addClass('active');
+        };
+        
+        if ( scroll >= vid_scroll - 30 ) {
+            $('.nav p').children("img").remove();
+            $('.nav p').removeClass('active');
+            $('#s2').append(' <img src="/images/53e21047.003.jpg" width="20px" height="auto">');
+            $('#s2').addClass('active');           
+        };
+        
+        if ( scroll >= pic_scroll - 30 ) {
+            $('.nav p').children("img").remove();
+            $('.nav p').removeClass('active');
+            $('#s3').append(' <img src="/images/53e21047.003.jpg" width="20px" height="auto">');
+            $('#s3').addClass('active');           
+        };
+        
+        if ( scroll >= comment_scroll - 30 ) {
+            $('.nav p').children("img").remove();
+            $('.nav p').removeClass('active');
+            $('#s4').append(' <img src="/images/53e21047.003.jpg" width="20px" height="auto">');
+            $('#s4').addClass('active');           
+        };
+
+
+    });
 
 </script>
             <div class=row>
@@ -79,7 +131,7 @@
                     <h1>GET THE <span class=fuck>FUCK</span> BETTER, GRABS<span class=dotcom>.com</span></h1>
                     </div>
                     <div id="chowchow" class="col-sm-4" data-toggle="modal" data-target="#messages">
-                        <img src="http://getthefuckbetter.com/images/53e21047.003.jpg" width="100%" />
+                        <img src="/images/53e21047.003.jpg" width="100%" />
                         <p><span class=fuck>Click the chow chow to leave a message for Grabs.</span></p>
                         <p>Note: Your message will be published automatically, so don't fuck it up.</p>
                     </div>
