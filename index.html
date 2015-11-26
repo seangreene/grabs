@@ -36,94 +36,7 @@
 
                 <p id="chowchow-small" data-toggle="modal" data-target="#messages" class=fuck>Leave a message</p>
             </div>
-<script>
-    $("#top").click(function(){
-        $('html, body').animate({
-            scrollTop: $("body").offset().top
-        }, 1000);
-    });
-    $("#s1").click(function(){
-        $('html, body').animate({
-            scrollTop: $("#gif").offset().top
-        }, 1000);
-    });
-    $("#s2").click(function(){
-        $('html, body').animate({
-            scrollTop: $("#videos").offset().top
-        }, 1000);
-    });
-    $("#s3").click(function(){
-        $('html, body').animate({
-            scrollTop: $("#photos").offset().top
-        }, 1000);
-    });
-    $("#s4").click(function(){
-        $('html, body').animate({
-            scrollTop: $("#comments").offset().top
-        }, 1000);
-    });
-    $('.nav p').click(function(){
-        $('.nav p').children("img").remove();
-        $('.nav p').removeClass('active');
 
-        $(this).append(' <img src="/images/53e21047.003.jpg" width="20px" height="auto">');
-        
-        $(this).addClass('active');
-    });
-
-
-    
-    $(window).scroll(function(event){
-
-        var scroll = $(window).scrollTop();
-        var scroll_top = $('body').offset().top;
-        var gif_scroll = $('#gif').offset().top;
-        var vid_scroll = $('#videos').offset().top;
-        var pic_scroll = $('#photos').offset().top;
-        var comment_scroll = $('#comments').offset().top;
-
-        //console.log( scroll > gif_scroll);
-
-        if ( scroll >= scroll_top - 30 ) {
-
-            $('.nav p').children("img").remove();
-            $('.nav p').removeClass('active');
-            $('#top').append(' <img src="/images/53e21047.003.jpg" width="20px" height="auto">');
-            $('#top').addClass('active');           
-        };
-
-        if ( scroll >= gif_scroll - 30 ) {
-            $('.nav p').children("img").remove();
-            $('.nav p').removeClass('active');
-            $('#s1').append(' <img src="/images/53e21047.003.jpg" width="20px" height="auto">');
-            $('#s1').addClass('active');
-        };
-        
-        if ( scroll >= vid_scroll - 30 ) {
-            $('.nav p').children("img").remove();
-            $('.nav p').removeClass('active');
-            $('#s2').append(' <img src="/images/53e21047.003.jpg" width="20px" height="auto">');
-            $('#s2').addClass('active');           
-        };
-        
-        if ( scroll >= pic_scroll - 30 ) {
-            $('.nav p').children("img").remove();
-            $('.nav p').removeClass('active');
-            $('#s3').append(' <img src="/images/53e21047.003.jpg" width="20px" height="auto">');
-            $('#s3').addClass('active');           
-        };
-        
-        if ( scroll >= comment_scroll - 30 ) {
-            $('.nav p').children("img").remove();
-            $('.nav p').removeClass('active');
-            $('#s4').append(' <img src="/images/53e21047.003.jpg" width="20px" height="auto">');
-            $('#s4').addClass('active');           
-        };
-
-
-    });
-
-</script>
             <div class=row>
                 <div class="col-xs-12 col-sm-8 col-sm-offset-2">
                     <div id="hed">
@@ -300,53 +213,139 @@ function displayData(data, tabletop) {
 <script src="gallery/js/bootstrap-image-gallery.min.js"></script>
 <script>
 
+//click these to scroll wherever the fuck you want
+$("#top").click(function(){
+    $('html, body').animate({
+        scrollTop: $("body").offset().top
+    }, 1000);
+});
+$("#s1").click(function(){
+    $('html, body').animate({
+        scrollTop: $("#gif").offset().top
+    }, 1000);
+});
+$("#s2").click(function(){
+    $('html, body').animate({
+        scrollTop: $("#videos").offset().top
+    }, 1000);
+});
+$("#s3").click(function(){
+    $('html, body').animate({
+        scrollTop: $("#photos").offset().top
+    }, 1000);
+});
+$("#s4").click(function(){
+    $('html, body').animate({
+        scrollTop: $("#comments").offset().top
+    }, 1000);
+});
+$('.nav p').click(function(){
+    $('.nav p').children("img").remove();
+    $('.nav p').removeClass('active');
+
+    $(this).append(' <img src="/images/53e21047.003.jpg" width="20px" height="auto">');
+    
+    $(this).addClass('active');
+});
+
+//fucking scrollspy  
+$(window).scroll(function(event){
+
+    var scroll = $(window).scrollTop();
+    var scroll_top = $('body').offset().top;
+    var gif_scroll = $('#gif').offset().top;
+    var vid_scroll = $('#videos').offset().top;
+    var pic_scroll = $('#photos').offset().top;
+    var comment_scroll = $('#comments').offset().top;
+
+    if ( scroll >= scroll_top - 30 ) {
+        $('.nav p').children("img").remove();
+        $('.nav p').removeClass('active');
+        $('#top').append(' <img src="/images/53e21047.003.jpg" width="20px" height="auto">');
+        $('#top').addClass('active');           
+    };
+
+    if ( scroll >= gif_scroll - 30 ) {
+        $('.nav p').children("img").remove();
+        $('.nav p').removeClass('active');
+        $('#s1').append(' <img src="/images/53e21047.003.jpg" width="20px" height="auto">');
+        $('#s1').addClass('active');
+    };
+    
+    if ( scroll >= vid_scroll - 30 ) {
+        $('.nav p').children("img").remove();
+        $('.nav p').removeClass('active');
+        $('#s2').append(' <img src="/images/53e21047.003.jpg" width="20px" height="auto">');
+        $('#s2').addClass('active');           
+    };
+    
+    if ( scroll >= pic_scroll - 30 ) {
+        $('.nav p').children("img").remove();
+        $('.nav p').removeClass('active');
+        $('#s3').append(' <img src="/images/53e21047.003.jpg" width="20px" height="auto">');
+        $('#s3').addClass('active');           
+    };
+    
+    if ( scroll >= comment_scroll - 30 ) {
+        $('.nav p').children("img").remove();
+        $('.nav p').removeClass('active');
+        $('#s4').append(' <img src="/images/53e21047.003.jpg" width="20px" height="auto">');
+        $('#s4').addClass('active');           
+    };
+
+});
+
+//here we frickin go
 $(document).ready(function(){
 
+    //lazy load, like grad students. this probably isn't doing shit right now.
     $("img.lazy").lazyload({
         effect : "fadeIn"
     });
 
     var photos = [
-                'images/get-the-fuck-better.jpg',
-                'images/ec035b57.001.jpg',
-                'images/0e89154b.002.jpg',
-                'images/53e21047.003.jpg',
-                'images/56f70008.004.jpg',
-                'images/3be16b1c.005.jpg',
-                'images/7e1fbd10.006.jpg',
-                'images/1c10c96c.007.jpg',
-                'images/a47fae99.008.jpg',
-                'images/c0fee19f.009.jpg',
-                'images/111774e3.010.jpg',
-                'images/bc5e254f.011.jpg',
-                'images/0eb9d56c.012.jpg',
-                'images/013.jpg',
-                'images/014.jpg',
-                'images/015.jpg',
-                'images/016.jpg',
-                'images/grablets2014.jpg',
-                'images/grabs-stunna.jpg',
-                'images/017.jpg',
-                'images/018-commencement.jpg',
-                'images/019-commencement.jpg',
-                'images/020-samnaush.jpg',
-                'images/022.jpg',
-                'images/023.jpg',
-                'images/Christmas2012.jpg',
-                'images/024.jpg',
-                'images/025.jpg',
-                'images/026.jpg',
-                'images/027.jpg',
-                'images/028.jpg'
+        'images/get-the-fuck-better.jpg',
+        'images/ec035b57.001.jpg',
+        'images/0e89154b.002.jpg',
+        'images/53e21047.003.jpg',
+        'images/56f70008.004.jpg',
+        'images/3be16b1c.005.jpg',
+        'images/7e1fbd10.006.jpg',
+        'images/1c10c96c.007.jpg',
+        'images/a47fae99.008.jpg',
+        'images/c0fee19f.009.jpg',
+        'images/111774e3.010.jpg',
+        'images/bc5e254f.011.jpg',
+        'images/0eb9d56c.012.jpg',
+        'images/013.jpg',
+        'images/014.jpg',
+        'images/015.jpg',
+        'images/016.jpg',
+        'images/grablets2014.jpg',
+        'images/grabs-stunna.jpg',
+        'images/017.jpg',
+        'images/018-commencement.jpg',
+        'images/019-commencement.jpg',
+        'images/020-samnaush.jpg',
+        'images/022.jpg',
+        'images/023.jpg',
+        'images/Christmas2012.jpg',
+        'images/024.jpg',
+        'images/025.jpg',
+        'images/026.jpg',
+        'images/027.jpg',
+        'images/028.jpg'
     ];
 
+    //loop to add some shitty pictures to the page
     for (i = 0; i < photos.length; i++) { 
         $('#links').append(
             "<div class='crop'><a href='" + photos[i] + "'><img class='lazy' src=" + photos[i] + " data-original='" + photos[i] + "' /></a></div>"
         )
     };
 
-
+    //keeping the images square
+    //this is probably making a big fucking mess of things
     var cw = $('.crop img').width();
     $('.crop').css({'height':cw+'px'});
 
@@ -354,8 +353,7 @@ $(document).ready(function(){
 
 });
 
-
-
+//activate the modal for the photos
 document.getElementById('links').onclick = function (event) {
     event = event || window.event;
     var target = event.target || event.srcElement,
