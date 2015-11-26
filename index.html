@@ -301,53 +301,60 @@ function displayData(data, tabletop) {
 <script src="gallery/js/bootstrap-image-gallery.min.js"></script>
 <script>
 
-$("img.lazy").lazyload({
-    effect : "fadeIn"
+$(document).ready(function(){
+
+    $("img.lazy").lazyload({
+        effect : "fadeIn"
+    });
+
+    var photos = [
+                'images/get-the-fuck-better.jpg',
+                'images/ec035b57.001.jpg',
+                'images/0e89154b.002.jpg',
+                'images/53e21047.003.jpg',
+                'images/56f70008.004.jpg',
+                'images/3be16b1c.005.jpg',
+                'images/7e1fbd10.006.jpg',
+                'images/1c10c96c.007.jpg',
+                'images/a47fae99.008.jpg',
+                'images/c0fee19f.009.jpg',
+                'images/111774e3.010.jpg',
+                'images/bc5e254f.011.jpg',
+                'images/0eb9d56c.012.jpg',
+                'images/013.jpg',
+                'images/014.jpg',
+                'images/015.jpg',
+                'images/016.jpg',
+                'images/grablets2014.jpg',
+                'images/grabs-stunna.jpg',
+                'images/017.jpg',
+                'images/018-commencement.jpg',
+                'images/019-commencement.jpg',
+                'images/020-samnaush.jpg',
+                'images/022.jpg',
+                'images/023.jpg',
+                'images/Christmas2012.jpg',
+                'images/024.jpg',
+                'images/025.jpg',
+                'images/026.jpg',
+                'images/027.jpg',
+                'images/028.jpg'
+    ];
+
+    for (i = 0; i < photos.length; i++) { 
+        $('#links').append(
+            "<div class='crop'><a href='" + photos[i] + "'><img class='lazy' src=" + photos[i] + " data-original='" + photos[i] + "' /></a></div>"
+        )
+    };
+
+
+    var cw = $('.crop img').width();
+    $('.crop').css({'height':cw+'px'});
+
+
+
 });
 
-var photos = [
-            'images/get-the-fuck-better.jpg',
-            'images/ec035b57.001.jpg',
-            'images/0e89154b.002.jpg',
-            'images/53e21047.003.jpg',
-            'images/56f70008.004.jpg',
-            'images/3be16b1c.005.jpg',
-            'images/7e1fbd10.006.jpg',
-            'images/1c10c96c.007.jpg',
-            'images/a47fae99.008.jpg',
-            'images/c0fee19f.009.jpg',
-            'images/111774e3.010.jpg',
-            'images/bc5e254f.011.jpg',
-            'images/0eb9d56c.012.jpg',
-            'images/013.jpg',
-            'images/014.jpg',
-            'images/015.jpg',
-            'images/016.jpg',
-            'images/grablets2014.jpg',
-            'images/grabs-stunna.jpg',
-            'images/017.jpg',
-            'images/018-commencement.jpg',
-            'images/019-commencement.jpg',
-            'images/020-samnaush.jpg',
-            'images/022.jpg',
-            'images/023.jpg',
-            'images/Christmas2012.jpg',
-            'images/024.jpg',
-            'images/025.jpg',
-            'images/026.jpg',
-            'images/027.jpg',
-            'images/028.jpg'
-];
-
-for (i = 0; i < photos.length; i++) { 
-    $('#links').append(
-        "<div class='crop'><a href='" + photos[i] + "'><img class='lazy' src=" + photos[i] + " data-original='" + photos[i] + "' /></a></div>"
-    )
-};
-
-
-var cw = $('.crop img').width();
-$('.crop').css({'height':cw+'px'});
 
 
 document.getElementById('links').onclick = function (event) {
