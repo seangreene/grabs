@@ -340,14 +340,15 @@ $(document).ready(function(){
     //loop to add some shitty pictures to the page
     for (i = 0; i < photos.length; i++) { 
         $('#links').append(
-            "<div class='crop'><a href='" + photos[i] + "'><img class='lazy' src=" + photos[i] + " data-original='" + photos[i] + "' /></a></div>"
+            "<div class='crop'><a href='" + photos[i] + "'><img class='lazy img-responsive' src=" + photos[i] + " data-original='" + photos[i] + "' /></a></div>"
         )
     };
 
-    //keeping the images square
-    //this is probably making a big fucking mess of things
-    var cw = $('.crop img').width();
-    $('.crop').css({'height':cw+'px'});
+    $(window).resize(function(){
+        var cw = $('.crop img').width();
+        $('.crop').css({'height':cw+'px'});        
+    });
+
 
 
 

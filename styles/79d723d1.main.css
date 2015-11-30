@@ -6321,22 +6321,14 @@ a {
 
 .crop {
     width: calc(19% - 2px);
-    /*height: 200px;*/
     overflow: hidden;
     margin: 2px;
     position: relative;
-
 }
 .crop img {
-    position: absolute;
-    left: -100%;
-    right: -100%;
-    top: -100%;
-    bottom: -100%;
-    margin: auto;
-    height: 100%;
-    min-width: 100%;
-    overflow: hidden;
+    object-fit: cover;
+    width: 200px;
+    height: 200px;
 }
 
 
@@ -6371,6 +6363,12 @@ a {
     .comment-box div {
         width: 100%;
     }
+    .crop {
+        width: calc(24% - 2px);
+        overflow: hidden;
+        margin: 2px;
+        position: relative;
+    }
 }
 @media (max-width: 631px){
     #hed {
@@ -6379,6 +6377,15 @@ a {
     #chowchow {
         width: 100%;
         display:none;
+    }
+    .crop {
+        width: calc(24% - 2px);
+        overflow: hidden;
+        margin: 2px;
+        position: relative;
+    }
+    .crop img {
+        width: 150px;
     }
 }
 .glyphicon-heart {
