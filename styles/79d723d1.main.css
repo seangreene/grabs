@@ -6349,6 +6349,12 @@ a {
 .comment-box div img[src=""] {
     display: none;
 }
+.comment-box div img {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
 .clear {
     clear: both;
 }
